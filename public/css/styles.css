@@ -136,19 +136,41 @@ input[type="button"] {
   cursor: pointer;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 ul {
   list-style: none;
+}
+
+li {
+  margin-right: 5px;
 }
 
 .navbar {
   display: flex;
   flex-direction: row;
   flex-flow: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
 }
 
+.searchBar {
+}
+
 #searchBarSubmit {
+  font-size: 1rem;
+  letter-spacing: 0rem;
+  font-weight: 600;
+  height: 20px;
+  line-height: 20px;
+  padding: 0;
+  border: 0;
 }

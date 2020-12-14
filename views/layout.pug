@@ -7,7 +7,7 @@ html(lang='en')
     link(rel="stylesheet" href="./css/styles.css")
     title OL Directory
   body
-    header(class="container")
+    header(class="")
       ul(class="navbar")
         li 
           a(href="/") 
@@ -15,7 +15,7 @@ html(lang='en')
         li
           a(href="#") About
         li
-          form()
+          form(class="searchBar")
             select(name="searchType" id="searchType")
               option(value="all") All
               option(value="title") Title
@@ -25,4 +25,4 @@ html(lang='en')
               option(value="lists") Lists
               option(value="advanced") Advanced
             input(type="text" name="searchTerm" id="searchBar" placeholder="type...")
-            button(type="submit" id="searchBarSubmit") Submit
+            button(type="submit" id="searchBarSubmit") Go
