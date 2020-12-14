@@ -14,7 +14,7 @@ body {
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 90px;
   box-sizing: border-box;
@@ -138,4 +138,17 @@ input[type="button"] {
 
 ul {
   list-style: none;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+}
+
+a {
+  text-decoration: none;
+}
+
+#searchBarSubmit {
 }

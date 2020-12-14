@@ -8,10 +8,10 @@ html(lang='en')
     title OL Directory
   body
     header(class="container")
-      ul
+      ul(class="navbar")
         li 
           a(href="/") 
-            h1 Open Library Directory
+            h1(class="txt-lg") Open Library Directory
         li
           a(href="#") About
         li
@@ -25,4 +25,4 @@ html(lang='en')
               option(value="lists") Lists
               option(value="advanced") Advanced
             input(type="text" name="searchTerm" id="searchBar" placeholder="type...")
-            button(type="submit") Submit
+            button(type="submit" id="searchBarSubmit") Submit
