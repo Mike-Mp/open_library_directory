@@ -2,15 +2,24 @@ doctype
 html(lang='en')
   head
     meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     link(rel="stylesheet", href="./css/normalize.css")
     link(rel="stylesheet" href="./css/styles.css")
     title OL Directory
   body
     header
       ul
-        li
-          a(href="/") Home
+        li 
+          a(href="/") Open Library Directory
         li
           a(href="#") About
         li
-          a(href="#") Open Library
+          form()
+            select(name="searchType" id="searchType")
+              option(value="all") All
+              option(value="title") Title
+              option(value="author") Author
+              option(value="text") Text
+              option(value="subject") Subject
+              option(value="lists") Lists
+              option(value="advanced") Advanced
