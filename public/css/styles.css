@@ -169,6 +169,10 @@ input[type="button"] {
   color: rgb(159, 159, 255);
 }
 
+.donate a span {
+  margin-left: 3px;
+}
+
 .donate a:hover span {
   color: red;
 }
@@ -285,4 +289,10 @@ a {
   height: 25px;
   line-height: 20px;
   margin-left: 7px;
+  position: relative;
+  border: none;
+  background-color: rgb(159, 159, 255);
+  color: white;
+  padding: 0 15px;
+  transform: translate(0, 10%);
 }
