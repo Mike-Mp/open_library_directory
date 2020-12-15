@@ -7,6 +7,9 @@ html(lang='en')
     link(rel="stylesheet" href="./css/styles.css")
     title OL Directory
   body
+    div(class="donate")
+      p.txt-sm Donate to Internet Archive
+      button.buttonInfo Donate
     header(class="")
       a(href="/") 
         h1(class="txt-lg") Open Library Directory
@@ -16,15 +19,15 @@ html(lang='en')
         li
           a(href="#") Browse
       form(class="searchBar")
-          div.select
-            select(name="searchType" id="searchType")
-              option(value="all") All
-              option(value="title") Title
-              option(value="author") Author
-              option(value="text") Text
-              option(value="subject") Subject
-              option(value="lists") Lists
-              option(value="advanced") Advanced
-            span.focus
-          input(type="text" name="searchTerm" id="searchBar" placeholder="type...")
-          button(type="submit" id="searchBarSubmit") Go
+         div.select
+           select(name="searchType" id="searchType")
+             option(value="all") All
+             option(value="title") Title
+             option(value="author") Author
+             option(value="text") Text
+             option(value="subject") Subject
+             option(value="lists") Lists
+             option(value="advanced") Advanced
+           span.focus
+         input(type="text" name="searchTerm" id="searchBar" placeholder="type...")
+         button(type="submit" id="searchBarSubmit") Go

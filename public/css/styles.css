@@ -142,10 +142,20 @@ input[type="button"] {
   cursor: pointer;
 }
 
+.donate {
+  display: flex;
+  justify-content: center;
+}
+
+.donate button {
+  margin-left: 10px;
+}
+
 header {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px dashed black;
 }
 
 ul {
@@ -186,6 +196,7 @@ select {
   grid-template-areas: "select";
   align-items: center;
   position: relative;
+  margin-right: 4px;
 }
 
 .select,
