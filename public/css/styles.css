@@ -1,3 +1,9 @@
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -152,6 +158,24 @@ li {
 
 select {
   appearance: none;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  border: 1px solid var(--select-border);
+  padding: 0.25em 0.5em;
+  margin: 0;
+  width: 100%;
+  min-width: 6ch;
+  max-width: 10ch;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  line-height: inherit;
+  outline: none;
+  border-radius: 0.3em;
+}
+
+#searchType {
+  margin-right: 5px;
 }
 
 .navbar {
