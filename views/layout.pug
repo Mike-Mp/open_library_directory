@@ -8,14 +8,14 @@ html(lang='en')
     title OL Directory
   body
     header(class="")
+      a(href="/") 
+        h1(class="txt-lg") Open Library Directory
       ul(class="navbar")
-        li 
-          a(href="/") 
-            h1(class="txt-lg") Open Library Directory
         li
           a(href="#") About
         li
-          form(class="searchBar")
+          a(href="#") Browse
+      form(class="searchBar")
             select(name="searchType" id="searchType")
               option(value="all") All
               option(value="title") Title
