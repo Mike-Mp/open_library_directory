@@ -151,6 +151,8 @@ input[type="button"] {
 }
 
 .donate p {
+  position: relative;
+  transform: translate(0, 20%);
 }
 
 .donate a {
@@ -176,6 +178,19 @@ header {
   justify-content: center;
   align-items: center;
   border: 1px dashed black;
+}
+
+header h1 {
+  position: relative;
+  transform: translate(0, 28%);
+}
+
+header a {
+  color: #333;
+}
+
+header a:hover {
+  color: rgb(159, 159, 255);
 }
 
 ul {
