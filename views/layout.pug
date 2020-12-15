@@ -16,6 +16,7 @@ html(lang='en')
         li
           a(href="#") Browse
       form(class="searchBar")
+          div.select
             select(name="searchType" id="searchType")
               option(value="all") All
               option(value="title") Title
@@ -24,5 +25,6 @@ html(lang='en')
               option(value="subject") Subject
               option(value="lists") Lists
               option(value="advanced") Advanced
-            input(type="text" name="searchTerm" id="searchBar" placeholder="type...")
-            button(type="submit" id="searchBarSubmit") Go
+            span.focus
+          input(type="text" name="searchTerm" id="searchBar" placeholder="type...")
+          button(type="submit" id="searchBarSubmit") Go
