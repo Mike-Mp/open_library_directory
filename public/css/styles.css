@@ -202,10 +202,6 @@ header a {
   color: #333;
 }
 
-header a:hover {
-  color: rgb(159, 159, 255);
-}
-
 ul {
   list-style: none;
 }
