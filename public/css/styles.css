@@ -2,6 +2,11 @@
   --select-border: #777;
   --select-focus: blue;
   --select-arrow: var(--select-border);
+  --dur: 0.3s;
+  --rad: 0.7rem;
+  --btn-width: 6rem;
+  --height: 5rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
 
 html {
@@ -221,7 +226,6 @@ select {
   font-size: inherit;
   cursor: inherit;
   line-height: inherit;
-  outline: none;
 }
 
 .select {
@@ -287,6 +291,13 @@ a {
   display: flex;
 }
 
+#searchBarInput {
+  transition: all var(--dur) var(--bez);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+
 #searchBarSubmit {
   font-size: 1rem;
   letter-spacing: 0.1rem;
@@ -300,4 +311,9 @@ a {
   color: white;
   padding: 0 15px;
   transform: translate(0, 10%);
+  display: none;
+}
+
+#searchBarInput:note(:placeholder-shown) + button {
+  display: block;
 }
