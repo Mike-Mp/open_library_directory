@@ -14,7 +14,7 @@ body {
   line-height: 1.5;
   color: #222;
   font-family: "Helvetica";
-  background-color: white;
+  background-color: #e1dcc5;
 }
 
 .container {
@@ -181,7 +181,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
+}
+
+header > div {
+  width: 30%;
+}
+
+header > div > a {
+  display: inline-block;
+  width: 57%;
 }
 
 header h1 {
