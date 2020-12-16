@@ -300,21 +300,20 @@ a {
 }
 
 #searchBarSubmit {
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-  height: 25px;
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+  font-weight: 500;
+  height: 20px;
   line-height: 20px;
   margin-left: 7px;
   border: none;
-  background-color: rgb(159, 159, 255);
+  background-color: #333;
   color: white;
   padding: 0 15px;
-  transform: translate(0, 10%);
+  transform: translate(0, 15%);
   display: none;
   position: relative;
   right: 15%;
-  top: 10%;
   width: var(--btn-width);
   border-radius: 0 var(--rad) var(--rad) 0;
   transition: all 1s ease;
@@ -327,6 +326,5 @@ a {
 
 #searchBarInput:not(:placeholder-shown) + #searchBarSubmit {
   right: -1%;
-  top: -10%;
   display: block;
 }
