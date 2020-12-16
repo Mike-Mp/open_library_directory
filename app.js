@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.set("view engine", "pug");
 
-app.use(middleware.logger);
+// app.use(middleware.logger);
 
 app.use(express.static(path.join(__dirname, "public")));
 console.log(__dirname + "public");

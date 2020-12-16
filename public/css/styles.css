@@ -293,9 +293,10 @@ a {
 
 #searchBarInput {
   transition: all var(--dur) var(--bez);
+  border-radius: var(--rad);
+  width: 40%;
   transition-property: width, border-radius;
   z-index: 1;
-  position: relative;
 }
 
 #searchBarSubmit {
@@ -305,15 +306,27 @@ a {
   height: 25px;
   line-height: 20px;
   margin-left: 7px;
-  position: relative;
   border: none;
   background-color: rgb(159, 159, 255);
   color: white;
   padding: 0 15px;
   transform: translate(0, 10%);
   display: none;
+  position: relative;
+  right: 15%;
+  top: 10%;
+  width: var(--btn-width);
+  border-radius: 0 var(--rad) var(--rad) 0;
+  transition: all 1s ease;
 }
 
-#searchBarInput:note(:placeholder-shown) + button {
+#searchBarInput:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(40% - var(--btn-width));
+}
+
+#searchBarInput:not(:placeholder-shown) + #searchBarSubmit {
+  right: -1%;
+  top: -10%;
   display: block;
 }
