@@ -190,12 +190,12 @@ header {
 }
 
 header > div {
-  width: 30%;
+  width: 20%;
 }
 
 header > div > a {
   display: inline-block;
-  width: 57%;
+  /* width: 57%; */
 }
 
 header h1 {
