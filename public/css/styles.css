@@ -303,14 +303,12 @@ a {
   font-size: 2.9rem;
   letter-spacing: normal;
   font-weight: 300;
-  height: 20px;
-  line-height: 20px;
   /* margin-left: 7px; */
   border: none;
   background-color: #333;
   color: white;
-  padding: 0 19px;
-  transform: translate(0, 15%);
+  padding: 0px 5px;
+  transform: translate(0, 1%);
   display: none;
   position: relative;
   right: 15%;
