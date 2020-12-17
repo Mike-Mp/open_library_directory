@@ -1,15 +1,23 @@
 extends layout.pug
 
+block scripts
+  script(src="./js/slider.js")
+  link(rel="stylesheet", href="./css/index.css")
+
 block content
   div.container
-    h3 Browse by subject
+    h3.txt-lg Browse by subject
     hr
     .slider
-      p Art
-      p Science Fiction
-      p Fantasy
-      p Biographies
-      p Recipes
-      p Romance
-      p Textbooks
-      p Children
+      .wrapper
+        .items#items
+          p.slide Art
+          p.slide Science Fiction
+          p.slide Fantasy
+          p.slide Biographies
+          p.slide Recipes
+          p.slide Romance
+          p.slide Textbooks
+          p.slide Children 
+      span.control.prev#prev prev
+      span.control.next#next next
