@@ -1,23 +1,14 @@
 extends layout.pug
 
 block scripts
-  script(src="./js/slider.js")
+  link(rel="stylesheet", href="../node_modules/@glidejs/glide/dist/css/glide.core.min.css")
+  link(rel="stylesheet", href="../node_modules/@glidejs/glide/dist/css/glide.theme.min.css")
   link(rel="stylesheet", href="./css/index.css")
 
 block content
-  div.container
-    h3.txt-lg Browse by subject
-    hr
-    .slider
-      .wrapper
-        .items#items
-          p.slide Art
-          p.slide Science Fiction
-          p.slide Fantasy
-          p.slide Biographies
-          p.slide Recipes
-          p.slide Romance
-          p.slide Textbooks
-          p.slide Children 
-      span.control.prev#prev prev
-      span.control.next#next next
+  .glide
+    .glide__track(data-glide-el="track")
+      ul.glide__slides
+        li.glide__slide 0
+        li.glide__slide 1
+        li.glide__slide 2
