@@ -12,6 +12,7 @@ app.set("view engine", "pug");
 
 app.use(express.static(path.join(__dirname, "public")));
 console.log(__dirname + "public");
+
 // Routes
 app.use("/", router);
 

@@ -2,23 +2,19 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./public/js/slider.js",
+  entry: [
+    "./public/css/styles.css",
+    "./public/css/glide.core.min.css",
+    "./public/css/glide.theme.min.css",
+    "./public/css/index.css",
+  ],
   output: {
-    filename: "slider.js",
+    filename: "styles.js",
     path: path.resolve(__dirname, "public/dist"),
   },
 
   module: {
     rules: [
-      {
-        test: /\.pug$/,
-        use: "pug-loader",
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
-      },
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -40,10 +36,6 @@ module.exports = {
     },
   },
 
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "styles.css",
-    }),
-  ],
+  plugins: [new MiniCssExtractPlugin()],
   target: "node",
 };
