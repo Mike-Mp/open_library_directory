@@ -1,4 +1,9 @@
 import Glide from "@glidejs/glide";
-console.log("hello");
 
-new Glide(".glide").mount();
+new Glide(".glide", {
+  type: "carousel",
+  startAt: 0,
+  perView: 5,
+  focusAt: "center",
+  gap: 0,
+}).mount();
