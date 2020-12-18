@@ -25,11 +25,11 @@
 }
 .glide__arrow--left {
   left: 2em;
-  top: 7em;
+  top: 10em;
 }
 .glide__arrow--right {
   right: 2em;
-  top: 7em;
+  top: 10em;
 }
 .glide__arrow--disabled {
   opacity: 0.33;
