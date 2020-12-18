@@ -23,14 +23,16 @@
   flex-wrap: nowrap;
   will-change: transform;
   background-color: #fff;
+  border: 1px solid black;
+  border-radius: 1.5rem;
   align-items: center;
 }
 .glide__slides--dragging {
   user-select: none;
 }
 .glide__slide {
-  border: 1px dashed black;
-  border-radius: 1.5rem;
+  /* border: 1px dashed black;
+  border-radius: 1.5rem; */
   text-align: center;
   width: 100%;
   height: 100%;
@@ -39,10 +41,6 @@
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
-}
-
-#largerSlide {
-  margin-right: 5px;
 }
 
 .glide__slide a {
