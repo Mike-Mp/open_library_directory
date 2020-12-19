@@ -25,6 +25,7 @@ Router.get("/", (req, res) => {
 });
 
 Router.get("/subjects/:subject", async (req, res) => {
+  console.log(req.params.subject);
   res.render("subject", {});
 });
 
