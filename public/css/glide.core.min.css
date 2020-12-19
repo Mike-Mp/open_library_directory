@@ -50,6 +50,11 @@
   -moz-user-select: none;
   -ms-user-select: none;
 }
+
+.glide__slide a .fas {
+  margin-left: 5px;
+}
+
 .glide__arrows {
   -webkit-touch-callout: none;
   user-select: none;
