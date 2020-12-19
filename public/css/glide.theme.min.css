@@ -24,12 +24,10 @@
   border-color: white;
 }
 .glide__arrow--left {
-  left: 2em;
-  top: 10em;
+  left: -8em;
 }
 .glide__arrow--right {
-  right: 2em;
-  top: 10em;
+  right: -8em;
 }
 .glide__arrow--disabled {
   opacity: 0.33;

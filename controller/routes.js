@@ -1,3 +1,5 @@
+const { reset } = require("nodemon");
+
 const Router = require("express").Router();
 
 const slides = {
@@ -20,6 +22,10 @@ const slides = {
 
 Router.get("/", (req, res) => {
   res.render("index", { slides });
+});
+
+Router.get("/subjects/:subject", async (req, res) => {
+  res.render("subject", {});
 });
 
 module.exports = Router;
