@@ -3,6 +3,7 @@ extends layout.pug
 block scripts
   link(rel="stylesheet", href="./css/glide.core.min.css")
   link(rel="stylesheet", href="./css/glide.theme.min.css")
+  link(rel="stylesheet", href="./css/fontawesome.min.css")
   link(rel="stylesheet", href="./css/index.css")
 
 block content
@@ -10,7 +11,9 @@ block content
     .glide
       .glide__track(data-glide-el="track")
         ul.glide__slides
-          li.glide__slide Art
+          li.glide__slide 
+            a(href="#") Art
+              i(class="fas fa-brush")
           li.glide__slide Science Fiction
           li.glide__slide Fantasy
           li.glide__slide Biographies

@@ -45,6 +45,7 @@
 
 .glide__slide a {
   user-select: none;
+  color: #333;
   -webkit-user-drag: none;
   -moz-user-select: none;
   -ms-user-select: none;
