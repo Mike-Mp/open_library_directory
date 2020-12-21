@@ -1,5 +1,5 @@
 .glide__arrow {
-  position: absolute;
+  position: relative;
   display: block;
   top: 50%;
   z-index: 2;
@@ -24,10 +24,12 @@
   border-color: white;
 }
 .glide__arrow--left {
-  left: -8em;
+  left: 50rem;
+  top: 10rem;
 }
 .glide__arrow--right {
-  right: -8em;
+  right: -50rem;
+  top: -1rem;
 }
 .glide__arrow--disabled {
   opacity: 0.33;

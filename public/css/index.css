@@ -1,4 +1,5 @@
 /* ADD SPECIFIC SLIDER STYLES FOR INDEX PAGE */
+
 /* .glide__arrow--left {
   top: 10em;
 }
@@ -6,7 +7,16 @@
   top: 10em;
 } */
 
-#indexContainer {
-  background-color: rgba(51, 51, 51, 0.3);
+/* #indexContainer {
+  background-color: white;
   border-radius: 1.5rem;
+} */
+
+#indexContainer h3 {
+  margin-bottom: 0;
+}
+
+.glide__slides {
+  background-color: white;
+  border: 1px solid #333;
 }

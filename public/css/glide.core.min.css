@@ -22,8 +22,7 @@
   display: flex;
   flex-wrap: nowrap;
   will-change: transform;
-  background-color: #fff;
-  border: 1px solid black;
+  /* border: 1px dashed black; */
   border-radius: 1.5rem;
   align-items: center;
 }

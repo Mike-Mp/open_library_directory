@@ -17,9 +17,15 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #222;
+  color: #333;
   font-family: "Helvetica";
   background-color: #e1dcc5;
+}
+
+hr {
+  background-color: grey;
+  border: none;
+  height: 1px;
 }
 
 .container {
