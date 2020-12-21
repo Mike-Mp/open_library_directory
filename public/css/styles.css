@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,500&display=swap");
+
 :root {
   --select-border: #777;
   --select-focus: blue;
@@ -18,7 +20,8 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #333;
-  font-family: "Helvetica";
+  font-family: "Raleway", sans-serif;
+  /* font-family: "Helvetica"; */
   background-color: #e1dcc5;
 }
 
@@ -160,6 +163,7 @@ input[type="button"] {
   background-color: #333;
   padding-top: 5px;
   margin-bottom: 7px;
+  font-weight: 600;
 }
 
 .donate p {
@@ -199,6 +203,7 @@ header {
   margin: 0 auto;
   margin-bottom: 20px;
   flex-flow: row wrap;
+  font-weight: 500;
 }
 
 header > div {
@@ -319,7 +324,7 @@ a {
 #searchBarSubmit {
   font-size: 1.5rem;
   letter-spacing: normal;
-  font-weight: 300;
+  font-weight: 600;
   /* margin-left: 7px; */
   border: none;
   background-color: #333;
