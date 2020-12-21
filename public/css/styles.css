@@ -245,6 +245,10 @@ header button {
   /* transform: translateY(-50%); */
 }
 
+header button:hover {
+  border-color: white;
+}
+
 .navbar {
   min-width: 250px;
 }
