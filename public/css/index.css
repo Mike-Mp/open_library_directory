@@ -16,6 +16,10 @@
   margin-bottom: 0;
 }
 
+#indexContainer .glide {
+  cursor: default;
+}
+
 .glide__slides {
   background-color: white;
   border: 1px solid #333;

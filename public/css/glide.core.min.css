@@ -8,6 +8,7 @@
 }
 .glide__track {
   overflow: hidden;
+  cursor: default;
 }
 .glide__slides {
   position: relative;
@@ -25,6 +26,8 @@
   /* border: 1px dashed black; */
   border-radius: 1.5rem;
   align-items: center;
+  cursor: grab;
+  cursor: -moz-grab;
 }
 .glide__slides--dragging {
   user-select: none;
@@ -56,6 +59,7 @@
 }
 
 .glide__arrows {
+  cursor: default;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
