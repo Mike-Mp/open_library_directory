@@ -1,5 +1,5 @@
 .glide__arrow {
-  position: relative;
+  /* position: relative; */
   display: block;
   top: 50%;
   z-index: 2;
@@ -24,8 +24,8 @@
   border-color: white;
 }
 .glide__arrow--left {
-  left: 50rem;
-  top: 10rem;
+  left: 40rem;
+  top: 2.8rem;
 }
 .glide__arrow--right {
   right: -50rem;
