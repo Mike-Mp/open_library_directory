@@ -221,7 +221,7 @@ header h1 {
   transform: translate(0, 28%);
 }
 
-header a h1 {
+header h1 a {
   color: #333;
 }
 
