@@ -159,6 +159,7 @@ input[type="button"] {
   color: white;
   background-color: #333;
   padding-top: 5px;
+  margin-bottom: 7px;
 }
 
 .donate p {
