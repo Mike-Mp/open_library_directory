@@ -310,7 +310,7 @@ a {
 #searchBarInput {
   transition: all var(--dur) var(--bez);
   border-radius: var(--rad);
-  width: 40%;
+  width: 50%;
   transition-property: width;
   z-index: 1;
 }
@@ -328,14 +328,17 @@ a {
   display: none;
   position: relative;
   right: 15%;
+  top: 10%;
   width: var(--btn-width);
+  height: 2rem;
+  line-height: 10px;
   border-radius: 5px;
   transition: all 1s ease;
   content: "\f30b";
 }
 
 #searchBarInput:not(:placeholder-shown) {
-  width: calc(40% - var(--btn-width));
+  width: calc(70% - var(--btn-width));
 }
 
 #searchBarInput:not(:placeholder-shown) + #searchBarSubmit {
