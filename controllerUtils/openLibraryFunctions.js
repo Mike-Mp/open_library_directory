@@ -1,10 +1,13 @@
-const baseURL = "https://www.openlibrary.org/subjects";
+const subjectsURL = "https://www.openlibrary.org/subjects";
+const coversURL = "https://www.covers.openlibrary.org/b";
+// http://covers.openlibrary.org/b/$key/$value-$size.jpg
+
 import axios from "axios";
 
 // Get list of books by String:Subject, return object with 12 random entries.
 export const getBySubject = async (subject) => {
   const { initList, initWorkList } = await axios
-    .get(`${baseURL}/${subject.toLowerCase()}.json?limit=500&details=true`)
+    .get(`${subjectsURL}/${subject.toLowerCase()}.json?limit=500&details=true`)
     .then((res) => {
       return res.data, res.data.works;
     })
@@ -16,11 +19,15 @@ export const getBySubject = async (subject) => {
     entries.push(initWorkList[i]);
   }
 
-  return { initList, entries };
+  const bookCovers = await findCovers(entries, 0);
+
+  console.log(bookCovers);
+
+  return { initList, entries, bookCovers };
 };
 
 const randomSelection = () => {
-  const rand = Math.floor(Math.random() * Math.floor(500));
+  const rand = Math.floor(Math.random() * Math.floor(100));
   let starterPos;
 
   if (rand - 12 < 0) {
@@ -30,4 +37,27 @@ const randomSelection = () => {
   }
 
   return starterPos;
+};
+
+// pageType = 0 === for slider , pageType = 1 === for book page
+export const findCovers = async (bookList, pageType) => {
+  const coverList = [];
+  let size;
+  if (pageType == 0) {
+    size = "M";
+  } else {
+    size = "S";
+  }
+
+  for (let i = 0; i < bookList.length(); i++) {
+    const cover = await axios
+      .get(`${coversURL}/id/${bookList[i].cover_id}-${size}`)
+      .then((res) => res)
+      .catch((err) => console.error(err));
+
+    console.log(cover);
+    coverList.push(cover);
+  }
+
+  return coverList;
 };
