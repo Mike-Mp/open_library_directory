@@ -28,7 +28,7 @@ Router.get("/about", (req, res) => {
 });
 
 Router.get("/subjects/:subject", async (req, res) => {
-  const { bookList } = await getBySubject(req.params.subject);
+  const bookList = await getBySubject(req.params.subject);
 
   res.json(bookList);
   // res.render("subject", {
