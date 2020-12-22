@@ -14,8 +14,6 @@ export const getBySubject = async (subject) => {
     entries.push(initWorkList[i]);
   }
 
-  entries.forEach((entry) => console.log(entry.title));
-
   return entries;
 };
 
