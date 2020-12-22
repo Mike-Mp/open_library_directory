@@ -4,7 +4,7 @@ import axios from "axios";
 // Get list of books by String:Subject, return object with 12 random entries.
 export const getBySubject = async (subject) => {
   const initWorkList = await axios
-    .get(`${baseURL}/${subject.toLowerCase()}.json`)
+    .get(`${baseURL}/${subject.toLowerCase()}.json?limit=500`)
     .then((res) => res.data.works)
     .catch((err) => console.error(err));
 
@@ -14,13 +14,13 @@ export const getBySubject = async (subject) => {
     entries.push(initWorkList[i]);
   }
 
-  console.log(entries);
+  entries.forEach((entry) => console.log(entry.title));
 
   return entries;
 };
 
 const randomSelection = () => {
-  const rand = Math.floor(Math.random() * Math.floor(12183));
+  const rand = Math.floor(Math.random() * Math.floor(500));
   let starterPos;
 
   if (rand - 12 < 0) {
@@ -29,6 +29,5 @@ const randomSelection = () => {
     starterPos = rand - 12;
   }
 
-  console.log(rand, starterPos);
   return starterPos;
 };
