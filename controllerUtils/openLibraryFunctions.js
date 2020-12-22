@@ -3,13 +3,12 @@ import axios from "axios";
 
 // Get list of books by String:Subject, return object with 12 random entries.
 export const getBySubject = async (subject) => {
-  const initList,
-    initWorkList = await axios
-      .get(`${baseURL}/${subject.toLowerCase()}.json?limit=500&details=true`)
-      .then((res) => {
-        return res.data, res.data.works;
-      })
-      .catch((err) => console.error(err));
+  const { initList, initWorkList } = await axios
+    .get(`${baseURL}/${subject.toLowerCase()}.json?limit=500&details=true`)
+    .then((res) => {
+      return res.data, res.data.works;
+    })
+    .catch((err) => console.error(err));
 
   const starterPos = randomSelection();
   const entries = [];
@@ -17,7 +16,7 @@ export const getBySubject = async (subject) => {
     entries.push(initWorkList[i]);
   }
 
-  return initList, entries;
+  return { initList, entries };
 };
 
 const randomSelection = () => {
