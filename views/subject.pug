@@ -5,3 +5,16 @@ block scripts
 
 
 block content
+  .container#indexContainer
+      h3.txt-md= title
+      hr
+      .glide
+        .glide__track(data-glide-el="track")
+          ul.glide__slides
+            each val in bookList
+              li.glide__slide
+                a(href="/subjects/" + key )=key
+                  i(class=val)
+        .glide__arrows(data-glide-el="controls")
+          button.glide__arrow.glide__arrow--left(data-glide-dir="<") prev
+          button.glide__arrow.glide__arrow--right(data-glide-dir=">") next
