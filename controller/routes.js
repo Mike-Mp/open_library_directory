@@ -28,15 +28,14 @@ Router.get("/about", (req, res) => {
 });
 
 Router.get("/subjects/:subject", async (req, res) => {
-  const { bookListExtraDetails, bookList, bookCovers } = await getBySubject(
-    req.params.subject
-  );
-  res.render("subject", {
-    title: req.params.subject,
-    bookListExtraDetails,
-    bookList,
-    bookCovers,
-  });
+  const { bookList } = await getBySubject(req.params.subject);
+
+  res.json(bookList);
+  // res.render("subject", {
+  //   title: req.params.subject,
+  //   bookListExtraDetails,
+  //   bookList,
+  // });
 });
 
 module.exports = Router;

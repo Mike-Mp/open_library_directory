@@ -6,10 +6,10 @@ import axios from "axios";
 
 // Get list of books by String:Subject, return object with 12 random entries.
 export const getBySubject = async (subject) => {
-  const { initList, initWorkList } = await axios
-    .get(`${subjectsURL}/${subject.toLowerCase()}.json?limit=500&details=true`)
+  const initWorkList = await axios
+    .get(`${subjectsURL}/${subject.toLowerCase()}.json?limit=100&details=true`)
     .then((res) => {
-      return res.data, res.data.works;
+      return res.data.works;
     })
     .catch((err) => console.error(err));
 
@@ -19,11 +19,11 @@ export const getBySubject = async (subject) => {
     entries.push(initWorkList[i]);
   }
 
-  const bookCovers = await findCovers(entries, 0);
+  // const bookCovers = await findCovers(entries, 0);
 
-  console.log(bookCovers);
+  // console.log(bookCovers);
 
-  return { initList, entries, bookCovers };
+  return entries;
 };
 
 const randomSelection = () => {
@@ -39,25 +39,25 @@ const randomSelection = () => {
   return starterPos;
 };
 
-// pageType = 0 === for slider , pageType = 1 === for book page
-export const findCovers = async (bookList, pageType) => {
-  const coverList = [];
-  let size;
-  if (pageType == 0) {
-    size = "M";
-  } else {
-    size = "S";
-  }
+// // pageType = 0 === for slider , pageType = 1 === for book page
+// export const findCovers = async (bookList, pageType) => {
+//   const coverList = [];
+//   let size;
+//   if (pageType == 0) {
+//     size = "M";
+//   } else {
+//     size = "S";
+//   }
 
-  for (let i = 0; i < bookList.length(); i++) {
-    const cover = await axios
-      .get(`${coversURL}/id/${bookList[i].cover_id}-${size}`)
-      .then((res) => res)
-      .catch((err) => console.error(err));
+//   for (let i = 0; i < bookList.length(); i++) {
+//     const cover = await axios
+//       .get(`${coversURL}/id/${bookList[i].cover_id}-${size}`)
+//       .then((res) => res)
+//       .catch((err) => console.error(err));
 
-    console.log(cover);
-    coverList.push(cover);
-  }
+//     console.log(cover);
+//     coverList.push(cover);
+//   }
 
-  return coverList;
-};
+//   return coverList;
+// };
