@@ -1,5 +1,3 @@
-const { reset } = require("nodemon");
-
 const Router = require("express").Router();
 
 const slides = {
