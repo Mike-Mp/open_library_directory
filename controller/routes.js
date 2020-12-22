@@ -24,6 +24,10 @@ Router.get("/", (req, res) => {
   res.render("index", { slides });
 });
 
+Router.get("/about", (req, res) => {
+  res.render("about");
+});
+
 Router.get("/subjects/:subject", async (req, res) => {
   console.log(req.params.subject);
   res.render("subject", {});
