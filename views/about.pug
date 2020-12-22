@@ -1,6 +1,9 @@
 extends layout.pug
 
+block scripts
+  link(rel="stylesheet", href="../css/about.css")
+
 block content
   .container#aboutContainer
     h3 About
-    p Project made by
+    p.txt-md #[a(href="https://github.com/Mike-Mp/open_library_directory" title="source code" target="_blank") Project] made by #[a(href="https://github.com/Mike-Mp" title="github profile" target="_blank") Mike-Mp] using NodeJS, ExpressJS, GliderJS and the Open Library API.
