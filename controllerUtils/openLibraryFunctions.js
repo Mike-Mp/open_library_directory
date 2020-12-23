@@ -26,7 +26,7 @@ export const getBySubject = async (subject) => {
 
   const bookCovers = await findCovers(initWorkList, 0);
 
-  return { initList, initWorkList, bookCovers };
+  return [initList, initWorkList, bookCovers];
 };
 
 // select random pos for initWorkList

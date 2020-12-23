@@ -28,7 +28,7 @@ Router.get("/about", (req, res) => {
 });
 
 Router.get("/subjects/:subject", async (req, res) => {
-  const { bookListExtraDetails, bookList, bookCovers } = await getBySubject(
+  const [bookListExtraDetails, bookList, bookCovers] = await getBySubject(
     req.params.subject
   );
 
