@@ -5,10 +5,10 @@ const coversURL = "http://covers.openlibrary.org/b";
 import axios from "axios";
 
 // Get list of books by String:Subject, return object with 12 random entries.
-// max Limit is 1000.
+// max Limit is 1000. add limit=value
 export const getBySubject = async (subject) => {
   const initList = await axios
-    .get(`${subjectsURL}/${subject.toLowerCase()}.json?limit=12&details=true`)
+    .get(`${subjectsURL}/${subject.toLowerCase()}.json?details=true`)
     .then((res) => {
       return res.data;
     })
