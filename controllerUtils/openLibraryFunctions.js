@@ -1,35 +1,35 @@
 const subjectsURL = "https://www.openlibrary.org/subjects";
-const coversURL = "https://www.covers.openlibrary.org/b";
+const coversURL = "http://covers.openlibrary.org/b";
 // http://covers.openlibrary.org/b/$key/$value-$size.jpg
 
 import axios from "axios";
 
 // Get list of books by String:Subject, return object with 12 random entries.
+// max Limit is 1000.
 export const getBySubject = async (subject) => {
   const initList = await axios
-    .get(`${subjectsURL}/${subject.toLowerCase()}.json?limit=24&details=true`)
+    .get(`${subjectsURL}/${subject.toLowerCase()}.json?limit=12&details=true`)
     .then((res) => {
       return res.data;
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error("ERROR INITLIST: ", err));
 
   const initWorkList = initList.works;
 
   delete initList.works;
 
-  const starterPos = randomSelection();
-  const entries = [];
-  for (let i = starterPos; i < starterPos + 12; i++) {
-    entries.push(initWorkList[i]);
-  }
+  // const starterPos = randomSelection();
+  // const entries = [];
+  // for (let i = starterPos; i < starterPos + 12; i++) {
+  //   entries.push(initWorkList[i]);
+  // }
 
-  const bookCovers = await findCovers(entries, 0);
+  const bookCovers = await findCovers(initWorkList, 0);
 
-  console.log(bookCovers);
-
-  return { entries, initList };
+  return { initList, initWorkList, bookCovers };
 };
 
+// select random pos for initWorkList
 const randomSelection = () => {
   const rand = Math.floor(Math.random() * Math.floor(24));
   let starterPos;
@@ -55,11 +55,10 @@ export const findCovers = async (entries, pageType) => {
 
   for (let i = 0; i < entries.length; i++) {
     const cover = await axios
-      .get(`${coversURL}/id/${entries[i].cover_id}-${size}`)
+      .get(`${coversURL}/id/${entries[i].cover_id}-${size}.jpg`)
       .then((res) => res)
-      .catch((err) => console.error(err));
+      .catch((err) => console.error("ERROR: COVER", err));
 
-    console.log(cover);
     coverList.push(cover);
   }
 

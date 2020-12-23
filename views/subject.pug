@@ -2,6 +2,8 @@ extends layout.pug
 
 block scripts
   link(rel="stylesheet", href="../css/subject.css")
+  link(rel="stylesheet", href="../css/glide.core.min.css")
+  link(rel="stylesheet", href="../css/glide.theme.min.css")
 
 
 block content
@@ -13,8 +15,9 @@ block content
           ul.glide__slides
             each val in bookList
               li.glide__slide
-                a(href="/subjects/" + key )=key
-                  i(class=val)
+                a(href="/subjects/")
         .glide__arrows(data-glide-el="controls")
           button.glide__arrow.glide__arrow--left(data-glide-dir="<") prev
           button.glide__arrow.glide__arrow--right(data-glide-dir=">") next
+  
+  script(src="./dist/slider.js" defer)
