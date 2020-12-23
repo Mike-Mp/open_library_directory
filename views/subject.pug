@@ -15,7 +15,10 @@ block content
             each val in bookList
               li.glide__slide
                 a(href="#")
-                  img(src="http://covers.openlibrary.org/b/id/" + val.cover_id + "-" + "M" + ".jpg" alt= val.title width=130 height=200 loading="lazy")
+                  figure.effect-slidedown.half-down
+                    img(src="http://covers.openlibrary.org/b/id/" + val.cover_id + "-" + "M" + ".jpg" alt= val.title width=130 height=200 loading="lazy")
+                    figcaption
+                      p.txt-sm= val.title
                   //- http://covers.openlibrary.org/b/$key/$value-$size.jpg
         .glide__arrows(data-glide-el="controls")
           button.glide__arrow.glide__arrow--left(data-glide-dir="<") prev
