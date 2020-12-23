@@ -1,6 +1,4 @@
 const subjectsURL = "https://www.openlibrary.org/subjects";
-const coversURL = "http://covers.openlibrary.org/b";
-// http://covers.openlibrary.org/b/$key/$value-$size.jpg
 
 import axios from "axios";
 
@@ -17,14 +15,6 @@ export const getBySubject = async (subject) => {
   const initWorkList = initList.works;
 
   delete initList.works;
-
-  // const starterPos = randomSelection();
-  // const entries = [];
-  // for (let i = starterPos; i < starterPos + 12; i++) {
-  //   entries.push(initWorkList[i]);
-  // }
-
-  // const bookCovers = await findCovers(initWorkList, 0);
 
   return [initList, initWorkList];
 };
@@ -44,6 +34,7 @@ const randomSelection = () => {
 };
 
 // pageType = 0 === for slider , pageType = 1 === for book page
+// function for change or deletion
 export const findCovers = async (entries, pageType) => {
   const coverList = [];
   let size;
