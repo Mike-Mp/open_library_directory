@@ -34,10 +34,12 @@ hr {
 .container {
   position: relative;
   width: 100%;
-  max-width: 980px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 90px;
   box-sizing: border-box;
+  background-color: white;
+  border-top: double 5px black;
 }
 
 .txt-sm {
