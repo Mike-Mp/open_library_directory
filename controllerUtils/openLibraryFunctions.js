@@ -32,26 +32,3 @@ const randomSelection = () => {
 
   return starterPos;
 };
-
-// pageType = 0 === for slider , pageType = 1 === for book page
-// function for change or deletion
-export const findCovers = async (entries, pageType) => {
-  const coverList = [];
-  let size;
-  if (pageType == 0) {
-    size = "M";
-  } else {
-    size = "S";
-  }
-
-  for (let i = 0; i < entries.length; i++) {
-    const cover = await axios
-      .get(`${coversURL}/id/${entries[i].cover_id}-${size}.jpg`)
-      .then((res) => res)
-      .catch((err) => console.error("ERROR: COVER", err));
-
-    coverList.push(cover);
-  }
-
-  return coverList;
-};
