@@ -1,5 +1,4 @@
 .glide {
-  position: relative;
   width: 100%;
   box-sizing: border-box;
 }
@@ -8,6 +7,7 @@
 }
 .glide__track {
   overflow: hidden;
+  width: 100%;
   cursor: default;
 }
 .glide__slides {

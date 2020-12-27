@@ -43,7 +43,8 @@ hr {
   padding: 0 90px;
   box-sizing: border-box;
   background-color: white;
-  border-top: double 5px black;
+  border: solid 2px black;
+  border-radius: 5px;
 }
 
 .container h3 {
