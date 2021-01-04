@@ -96,7 +96,12 @@ figure.effect-slidedown:hover p {
 }
 
 .contentQuarter {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.contentQuarter:last-of-type {
+  margin-right: 0;
 }
 
 .contentQuarter h6 {
