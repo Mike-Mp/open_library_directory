@@ -23,19 +23,19 @@ block content
       .glide__arrows(data-glide-el="controls")
         button.glide__arrow.glide__arrow--left(data-glide-dir="<") prev
         button.glide__arrow.glide__arrow--right(data-glide-dir=">") next
-    hr
     h3.txt-md Related
+    hr
     div.extraContent
-      h6.txt-sm Subjects
       span.contentQuarter
+        h6.txt-sm Subjects
         each val, index in bookListExtraDetails.subjects
           if index !== bookListExtraDetails.subjects.length - 1
             a(href= val.key) #{val.name}, 
           else
             a(href= val.key)= val.name
     div.extraContent
-      h6.txt-sm Places
       span.contentQuarter
+        h6.txt-sm Places
         each val, index in bookListExtraDetails.places
           if index !== bookListExtraDetails.places.length - 1
             a(href= val.key)  #{val.name}, 
@@ -43,16 +43,16 @@ block content
             a(href= val.key)= val.name
         
     div.extraContent
-      h6.txt-sm People
       span.contentQuarter
+        h6.txt-sm People
         each val, index in bookListExtraDetails.places
           if index !== bookListExtraDetails.places.length - 1
             a(href= val.key) #{val.name},
           else
             a(href= val.key)= val.name
     div.extraContent
-      h6.txt-sm Times
       span.contentQuarter
+        h6.txt-sm Times
         each val, index in bookListExtraDetails.places
           if index !== bookListExtraDetails.places.length - 1
             a(href= val.key) #{val.name}, 

@@ -91,9 +91,9 @@ figure.effect-slidedown:hover p {
 
 .extraContent {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .contentQuarter {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }

@@ -40,10 +40,10 @@ hr {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 90px;
+  padding: 0 20px;
   box-sizing: border-box;
   background-color: white;
-  border: solid 2px black;
+  border: solid 1px black;
   border-radius: 5px;
 }
 
