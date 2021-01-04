@@ -2,9 +2,12 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./public/js/slider.js",
+  entry: {
+    slider: "./public/js/slider.js",
+    imageSlider: "./public/js/imageSlider.js",
+  },
   output: {
-    filename: "slider.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "public/dist"),
   },
 
