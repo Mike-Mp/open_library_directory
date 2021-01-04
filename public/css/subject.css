@@ -88,3 +88,11 @@ figure.effect-slidedown:hover figcaption,
 figure.effect-slidedown:hover p {
   transform: translate3d(0, 0, 0);
 }
+
+.extraContent {
+  display: grid;
+}
+
+.contentQuarter {
+  font-size: 0.9rem;
+}

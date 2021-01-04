@@ -7,21 +7,57 @@ block scripts
 
 block content
   .container#indexContainer
-      h3.txt-lg= title
-      hr
-      .glide
-        .glide__track(data-glide-el="track")
-          ul.glide__slides
-            each val in bookList
-              li.glide__slide
-                a(href="#")
-                  figure.effect-slidedown.half-down
-                    img(src="http://covers.openlibrary.org/b/id/" + val.cover_id + "-" + "M" + ".jpg" alt= val.title width=130 height=200 loading="lazy")
-                    figcaption
-                      p.txt-sm= val.title
-                  //- http://covers.openlibrary.org/b/$key/$value-$size.jpg
-        .glide__arrows(data-glide-el="controls")
-          button.glide__arrow.glide__arrow--left(data-glide-dir="<") prev
-          button.glide__arrow.glide__arrow--right(data-glide-dir=">") next
-  
+    h3.txt-lg= title
+    hr
+    .glide
+      .glide__track(data-glide-el="track")
+        ul.glide__slides
+          each val in bookList
+            li.glide__slide
+              a(href="#")
+                figure.effect-slidedown.half-down
+                  img(src="http://covers.openlibrary.org/b/id/" + val.cover_id + "-" + "M" + ".jpg" alt= val.title width=130 height=200 loading="lazy")
+                  figcaption
+                    p.txt-sm= val.title
+                //- http://covers.openlibrary.org/b/$key/$value-$size.jpg
+      .glide__arrows(data-glide-el="controls")
+        button.glide__arrow.glide__arrow--left(data-glide-dir="<") prev
+        button.glide__arrow.glide__arrow--right(data-glide-dir=">") next
+    hr
+    h3.txt-md Related
+    div.extraContent
+      h6.txt-sm Subjects
+      span.contentQuarter
+        each val, index in bookListExtraDetails.subjects
+          if index !== bookListExtraDetails.subjects.length - 1
+            a(href= val.key)= val.name
+          else
+            a(href= val.key)= val.name
+    div.extraContent
+      h6.txt-sm Places
+      span.contentQuarter
+        each val, index in bookListExtraDetails.places
+          if index !== bookListExtraDetails.places.length - 1
+            a(href= val.key)= val.name
+          else
+            a(href= val.key)= val.name
+        
+    div.extraContent
+      h6.txt-sm People
+      span.contentQuarter
+        each val, index in bookListExtraDetails.places
+          if index !== bookListExtraDetails.places.length - 1
+            a(href= val.key)= val.name
+          else
+            a(href= val.key)= val.name
+    div.extraContent
+      h6.txt-sm Times
+      span.contentQuarter
+        each val, index in bookListExtraDetails.places
+          if index !== bookListExtraDetails.places.length - 1
+            a(href= val.key)= val.name
+          else
+            a(href= val.key)= val.name
+
+
   script(src="../dist/slider.js" defer)
