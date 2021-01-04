@@ -100,11 +100,19 @@ figure.effect-slidedown:hover p {
   margin-right: 10px;
 }
 
-.contentQuarter:last-of-type {
+.contentQuarter:nth-child(5) {
   margin-right: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contentQuarter:last-of-type a {
+  display: inline;
 }
 
 .contentQuarter h6 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }

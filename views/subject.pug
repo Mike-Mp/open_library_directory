@@ -54,6 +54,12 @@ block content
             a(href= val.key) #{val.name}, 
           else
             a(href= val.key)= val.name
+      div.contentQuarter
+        h6.txt-sm Prolific Authors
+        each val in bookListExtraDetails.authors
+          span
+            a(href= val.key) #{val.name}
+            span , #{val.count} books
 
 
   script(src="../dist/slider.js" defer)
