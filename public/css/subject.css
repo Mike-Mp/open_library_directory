@@ -91,6 +91,7 @@ figure.effect-slidedown:hover p {
 
 .extraContent {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .contentQuarter {

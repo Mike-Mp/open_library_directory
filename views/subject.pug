@@ -30,7 +30,7 @@ block content
       span.contentQuarter
         each val, index in bookListExtraDetails.subjects
           if index !== bookListExtraDetails.subjects.length - 1
-            a(href= val.key)= val.name
+            a(href= val.key) #{val.name}, 
           else
             a(href= val.key)= val.name
     div.extraContent
@@ -38,7 +38,7 @@ block content
       span.contentQuarter
         each val, index in bookListExtraDetails.places
           if index !== bookListExtraDetails.places.length - 1
-            a(href= val.key)= val.name
+            a(href= val.key)  #{val.name}, 
           else
             a(href= val.key)= val.name
         
@@ -47,7 +47,7 @@ block content
       span.contentQuarter
         each val, index in bookListExtraDetails.places
           if index !== bookListExtraDetails.places.length - 1
-            a(href= val.key)= val.name
+            a(href= val.key) #{val.name},
           else
             a(href= val.key)= val.name
     div.extraContent
@@ -55,7 +55,7 @@ block content
       span.contentQuarter
         each val, index in bookListExtraDetails.places
           if index !== bookListExtraDetails.places.length - 1
-            a(href= val.key)= val.name
+            a(href= val.key) #{val.name}, 
           else
             a(href= val.key)= val.name
 
