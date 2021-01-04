@@ -92,8 +92,14 @@ figure.effect-slidedown:hover p {
 .extraContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 5px;
 }
 
 .contentQuarter {
   font-size: 1rem;
+}
+
+.contentQuarter h6 {
+  margin: 0;
+  font-size: 1.1rem;
 }

@@ -33,7 +33,6 @@ block content
             a(href= val.key) #{val.name}, 
           else
             a(href= val.key)= val.name
-    div.extraContent
       span.contentQuarter
         h6.txt-sm Places
         each val, index in bookListExtraDetails.places
@@ -41,8 +40,6 @@ block content
             a(href= val.key)  #{val.name}, 
           else
             a(href= val.key)= val.name
-        
-    div.extraContent
       span.contentQuarter
         h6.txt-sm People
         each val, index in bookListExtraDetails.places
@@ -50,7 +47,6 @@ block content
             a(href= val.key) #{val.name},
           else
             a(href= val.key)= val.name
-    div.extraContent
       span.contentQuarter
         h6.txt-sm Times
         each val, index in bookListExtraDetails.places
