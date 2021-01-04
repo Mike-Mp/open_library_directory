@@ -100,19 +100,25 @@ figure.effect-slidedown:hover p {
   margin-right: 10px;
 }
 
-.contentQuarter:nth-child(5) {
+.contentQuarter h6 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.prolificAuthors {
   margin-right: 0;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: 1.1rem;
 }
 
-.contentQuarter:last-of-type a {
+.prolificAuthors a {
   display: inline;
 }
 
-.contentQuarter h6 {
-  margin: 0;
+.prolificAuthors h6 {
   font-size: 1.3rem;
+  margin: 0;
 }
