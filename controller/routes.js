@@ -32,8 +32,12 @@ Router.get("/subjects/:subject", async (req, res) => {
     req.params.subject
   );
 
+  const title = req.params.subject
+    .replace(/[_]/g, " ")
+    .replace(/^\w/, (c) => c.toUpperCase());
+
   res.render("subject", {
-    title: req.params.subject,
+    title,
     bookListExtraDetails,
     bookList,
   });
