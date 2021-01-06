@@ -12,9 +12,5 @@ export const getBySubject = async (subject) => {
     })
     .catch((err) => console.error("ERROR INITLIST: ", err));
 
-  const initWorkList = initList.works;
-
-  delete initList.works;
-
-  return [initList, initWorkList];
+  return initList;
 };
