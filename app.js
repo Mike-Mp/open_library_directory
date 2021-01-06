@@ -13,7 +13,7 @@ app.set("view engine", "pug");
 
 // app.use(middleware.logger);
 
-app.use(express.static("public"));
+app.use(express.static("public", { maxAge: 31557600 }));
 
 // Routes
 app.use("/", router);
