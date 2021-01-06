@@ -3,6 +3,9 @@ const app = express();
 const router = require("./controller/routes.js");
 const path = require("path");
 const middleware = require("./utils/middleware");
+const compression = require("compression");
+
+app.use(compression());
 
 app.use(express.json());
 
