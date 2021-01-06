@@ -18,17 +18,3 @@ export const getBySubject = async (subject) => {
 
   return [initList, initWorkList];
 };
-
-// select random pos for initWorkList
-const randomSelection = () => {
-  const rand = Math.floor(Math.random() * Math.floor(24));
-  let starterPos;
-
-  if (rand - 12 < 0) {
-    starterPos = 0;
-  } else {
-    starterPos = rand - 12;
-  }
-
-  return starterPos;
-};
