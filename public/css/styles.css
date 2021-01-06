@@ -228,6 +228,15 @@ header > div > a {
   /* width: 57%; */
 }
 
+#openBlue {
+  color: white;
+  background-color: #528abe;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 2px;
+  margin-right: 3px;
+}
+
 header h1 {
   position: relative;
   transform: translate(0, 28%);
