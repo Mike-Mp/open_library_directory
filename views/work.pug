@@ -1,1 +1,8 @@
 extends layout.pug
+
+block scripts
+
+block content
+  .container
+    img(src="http://covers.openlibrary.org/b/id/" + workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy")
+    h1= workInfo.title

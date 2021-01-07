@@ -17,10 +17,19 @@ export const getBySubject = async (subject) => {
 };
 
 export const getWork = async (key) => {
+  const pageInfo = {};
+
   const workInfo = await axios
-    .get(`${baseURL}${key}.json`)
+    .get(`${baseURL}/works/${key}.json`)
     .then((res) => res.data)
     .catch((err) => console.error("ERROR WORKINFO: ", err));
 
-  return workInfo;
+  const authorInfo = await axios
+    .get(`${baseURL}${workInfo.authors[0].author.key}.json`)
+    .then((res) => res.data)
+    .catch((err) => console.error("ERROR AUTHORINFO: ", err));
+
+  pageInfo = { workInfo, author_name: authorInfo.personal_name, bookInfo };
+
+  return pageInfo;
 };
