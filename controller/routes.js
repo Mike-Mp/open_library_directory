@@ -40,9 +40,9 @@ Router.get("/subjects/:subject", async (req, res) => {
   });
 });
 
-Router.get("/works/:key", async (req, res) => {
+Router.get("/books/:key", async (req, res) => {
   const pageInfo = await getBook(req.params.key);
-  res.render("work", { pageInfo });
+  res.render("book", { pageInfo });
 });
 
 module.exports = Router;
