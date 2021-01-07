@@ -4,39 +4,45 @@ const subjectsURL = "https://www.openlibrary.org/subjects";
 import axios from "axios";
 
 export const getBySubject = async (subject) => {
-  const initList = await axios
-    .get(`${subjectsURL}/${subject.toLowerCase()}.json?details=true`)
-    .then((res) => {
-      return res.data;
-    })
-    .catch((err) => console.error("ERROR INITLIST: ", err));
+  try {
+    const initList = await axios.get(
+      `${subjectsURL}/${subject.toLowerCase()}.json?details=true`
+    );
 
-  return initList;
+    return initList.data;
+  } catch (err) {
+    console.error("ERROR INITLIST: ", err);
+  }
 };
 
 export const getBook = async (key) => {
   const pageInfo = {};
 
-  const bookInfo = await axios
-    .get(`${baseURL}/books/${key}.json`)
-    .then((res) => res.data)
-    .catch((err) => console.error("BOOKINFO ERROR: ", err));
+  let bookInfo;
+  let workInfo;
+  let authorInfo;
 
-  console.log(bookInfo);
+  try {
+    bookInfo = await axios.get(`${baseURL}/books/${key}.json`);
+  } catch (err) {
+    console.error("BOOKINFO ERROR: ", err);
+  }
 
-  const workInfo = await axios
-    .get(`${baseURL}${bookInfo.works[0].key}.json`)
-    .then((res) => res.data)
-    .catch((err) => console.error("ERROR WORKINFO: ", err));
+  try {
+    workInfo = await axios.get(`${baseURL}${bookInfo.works[0].key}.json`);
+  } catch (err) {
+    console.error("ERROR WORKINFO: ", err);
+  }
 
-  const authorInfo = await axios
-    .get(`${baseURL}${bookInfo.authors[0].key}.json`)
-    .then((res) => res.data)
-    .catch((err) => console.error("ERROR AUTHORINFO: ", err));
+  try {
+    authorInfo = await axios.get(`${baseURL}${bookInfo.authors[0].key}.json`);
+  } catch (err) {
+    console.error("ERROR AUTHORINFO: ", err);
+  }
 
-  pageInfo.workInfo = workInfo;
-  pageInfo.author_name = authorInfo.personal_name;
-  pageInfo.bookInfo = bookInfo;
+  pageInfo.workInfo = workInfo.data;
+  pageInfo.author_name = authorInfo.data.personal_name;
+  pageInfo.bookInfo = bookInfo.data;
 
   return pageInfo;
 };
