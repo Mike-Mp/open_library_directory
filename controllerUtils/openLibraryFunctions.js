@@ -1,3 +1,4 @@
+const baseURL = "https://www.openlibrary.org";
 const subjectsURL = "https://www.openlibrary.org/subjects";
 
 import axios from "axios";
@@ -15,4 +16,11 @@ export const getBySubject = async (subject) => {
   return initList;
 };
 
-export const getBook = async (key) => {};
+export const getWork = async (key) => {
+  const workInfo = await axios
+    .get(`${baseURL}${key}.json`)
+    .then((res) => res.data)
+    .catch((err) => console.error("ERROR WORKINFO: ", err));
+
+  return workInfo;
+};
