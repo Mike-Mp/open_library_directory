@@ -1,0 +1,8 @@
+.coverSection {
+  float: left;
+  margin-right: 10px;
+}
+
+#bookCover {
+  border-radius: 5px;
+}

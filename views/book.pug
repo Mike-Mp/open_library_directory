@@ -1,8 +1,11 @@
 extends layout.pug
 
 block scripts
+  link(rel="stylesheet", href="../css/book.css")
 
 block content
   .container
-    img(src="http://covers.openlibrary.org/b/id/" + pageInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy")
-    h1= pageInfo.title
+    .coverSection
+      img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+    .infoSection
+      h1= pageInfo.workInfo.title
