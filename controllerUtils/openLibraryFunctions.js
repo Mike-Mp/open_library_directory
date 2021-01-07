@@ -14,3 +14,5 @@ export const getBySubject = async (subject) => {
 
   return initList;
 };
+
+export const getBook = async (key) => {};

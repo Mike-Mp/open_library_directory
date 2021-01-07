@@ -40,4 +40,8 @@ Router.get("/subjects/:subject", async (req, res) => {
   });
 });
 
+Router.get("/works/:key", async (req, res) => {
+  res.render("work", {});
+});
+
 module.exports = Router;
