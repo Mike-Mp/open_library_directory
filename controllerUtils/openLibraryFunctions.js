@@ -16,16 +16,18 @@ export const getBySubject = async (subject) => {
   return initList;
 };
 
-export const getWork = async (key) => {
+export const getBook = async (key) => {
   const pageInfo = {};
 
+  const bookInfo = await axios.get(`${baseURL}/books/${key}.json`);
+
   const workInfo = await axios
-    .get(`${baseURL}/works/${key}.json`)
+    .get(`${baseURL}/works/${bookInfo.works[0].key}.json`)
     .then((res) => res.data)
     .catch((err) => console.error("ERROR WORKINFO: ", err));
 
   const authorInfo = await axios
-    .get(`${baseURL}${workInfo.authors[0].author.key}.json`)
+    .get(`${baseURL}${bookInfo.authors[0].key}.json`)
     .then((res) => res.data)
     .catch((err) => console.error("ERROR AUTHORINFO: ", err));
 

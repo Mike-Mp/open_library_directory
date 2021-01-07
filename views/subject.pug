@@ -14,7 +14,7 @@ block content
         ul.glide__slides
           each val in bookListExtraDetails.works
             li.glide__slide
-              a(href= val.key)
+              a(href= val.cover_edition_key)
                 figure.effect-slidedown.half-down
                   img(src="http://covers.openlibrary.org/b/id/" + val.cover_id + "-" + "M" + ".jpg" alt= val.title width=130 height=200 loading="lazy")
                   figcaption

@@ -1,5 +1,5 @@
 const Router = require("express").Router();
-import { getBySubject, getWork } from "../controllerUtils/openLibraryFunctions";
+import { getBySubject, getBook } from "../controllerUtils/openLibraryFunctions";
 
 const slides = {
   Art: "fas fa-brush",
@@ -41,8 +41,8 @@ Router.get("/subjects/:subject", async (req, res) => {
 });
 
 Router.get("/works/:key", async (req, res) => {
-  const workInfo = await getWork(req.params.key);
-  res.render("work", { workInfo });
+  const pageInfo = await getBook(req.params.key);
+  res.render("work", { pageInfo });
 });
 
 module.exports = Router;
