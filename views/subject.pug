@@ -1,9 +1,9 @@
 extends layout.pug
 
 block scripts
-  link(rel="stylesheet", href="../css/glide.core.min.css")
-  link(rel="stylesheet", href="../css/glide.theme.min.css")
-  link(rel="stylesheet", href="../css/subject.css")
+  link(rel="stylesheet", href="../css/glide.core.min.css" defer)
+  link(rel="stylesheet", href="../css/glide.theme.min.css" defer)
+  link(rel="stylesheet", href="../css/subject.css" defer)
 
 block content
   .container
@@ -62,4 +62,4 @@ block content
           span , #{val.count} books
 
 
-  script(src="../dist/imageSlider.js" defer type="module")
+  script(src="../dist/imageSlider.js" async type="module")

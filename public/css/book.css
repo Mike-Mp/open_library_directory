@@ -1,8 +1,19 @@
 .coverSection {
   float: left;
-  /* margin-right: 10px; */
+  margin-right: 10px;
 }
 
 #bookCover {
   border-radius: 5px;
+}
+
+#subtitle {
+  color: gray;
+  font-style: italic;
+}
+
+.editionLine {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
 }

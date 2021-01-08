@@ -41,7 +41,8 @@ Router.get("/subjects/:subject", async (req, res) => {
 });
 
 Router.get("/books/:key", async (req, res) => {
-  const pageInfo = await getBook(req.params.key);
+  // const pageInfo = await getBook(req.params.key);
+  let pageInfo = null;
   res.render("book", { pageInfo });
 });
 
