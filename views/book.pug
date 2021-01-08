@@ -8,4 +8,7 @@ block content
     .coverSection
       img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
     .infoSection
-      h1= pageInfo.workInfo.title
+      h1.txt-lg= pageInfo.workInfo.title
+      if pageInfo.bookInfo.subtitle
+        h2.txt-md= pageInfo.bookInfo.subtitle
+      p by #{pageInfo.author_name}

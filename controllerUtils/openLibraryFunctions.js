@@ -29,13 +29,15 @@ export const getBook = async (key) => {
   }
 
   try {
-    workInfo = await axios.get(`${baseURL}${bookInfo.works[0].key}.json`);
+    workInfo = await axios.get(`${baseURL}${bookInfo.data.works[0].key}.json`);
   } catch (err) {
     console.error("ERROR WORKINFO: ", err);
   }
 
   try {
-    authorInfo = await axios.get(`${baseURL}${bookInfo.authors[0].key}.json`);
+    authorInfo = await axios.get(
+      `${baseURL}${bookInfo.data.authors[0].key}.json`
+    );
   } catch (err) {
     console.error("ERROR AUTHORINFO: ", err);
   }
