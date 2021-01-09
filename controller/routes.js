@@ -21,7 +21,6 @@ const slides = {
 };
 
 Router.get("/", (req, res) => {
-  console.log("GET", GET, "SET", SET);
   res.render("index", { slides });
 });
 
@@ -35,9 +34,7 @@ Router.get("/subjects/:subject", async (req, res) => {
     .replace(/^\w/, (c) => c.toUpperCase());
 
   let bookListExtraDetails = await GET(`subjects/${req.params.subject}`);
-  console.log("bookListExtraDetails exist?", bookListExtraDetails !== null);
   if (bookListExtraDetails) {
-    console.log("using cached data");
     bookListExtraDetails = JSON.parse(bookListExtraDetails);
     res.render("subject", {
       title,
@@ -46,7 +43,6 @@ Router.get("/subjects/:subject", async (req, res) => {
     return;
   }
 
-  console.log("do i reach this part????");
   bookListExtraDetails = await getBySubject(req.params.subject);
 
   await SET(
@@ -65,7 +61,6 @@ Router.get("/subjects/:subject", async (req, res) => {
 Router.get("/books/:key", async (req, res) => {
   let pageInfo = await GET(`books/${req.params.key}`);
   if (pageInfo) {
-    console.log("using cached data");
     pageInfo = JSON.parse(pageInfo);
     res.render("book", {
       pageInfo,
