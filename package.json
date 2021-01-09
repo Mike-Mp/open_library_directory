@@ -23,6 +23,7 @@
     "compression": "^1.7.4",
     "crypto-browserify": "^3.12.0",
     "dotenv": "^8.2.0",
+    "es6-promisify": "^6.1.1",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "pug": "^3.0.0",

@@ -1,5 +1,6 @@
 const Router = require("express").Router();
 import { getBySubject, getBook } from "../controllerUtils/openLibraryFunctions";
+const { GET, SET } = "../redisServer.js";
 
 const slides = {
   Art: "fas fa-brush",
@@ -28,11 +29,27 @@ Router.get("/about", (req, res) => {
 });
 
 Router.get("/subjects/:subject", async (req, res) => {
-  const bookListExtraDetails = await getBySubject(req.params.subject);
-
   const title = req.params.subject
     .replace(/[_]/g, " ")
     .replace(/^\w/, (c) => c.toUpperCase());
+
+  try {
+    const bookListExtraDetails = await GET(`subjects/${req.params.subject}`);
+    if (reply) {
+      console.log("using cached data");
+      res.render("subject", {
+        title,
+        bookListExtraDetails,
+      });
+    }
+    return;
+  } catch (err) {
+    console.error(err);
+  }
+
+  const bookListExtraDetails = await getBySubject(req.params.subject);
+
+  await SET(`subjects/${req.params.subject}`, bookListExtraDetails, 3600);
 
   res.render("subject", {
     title,
