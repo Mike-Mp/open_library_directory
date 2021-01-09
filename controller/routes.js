@@ -1,6 +1,6 @@
 const Router = require("express").Router();
 import { getBySubject, getBook } from "../controllerUtils/openLibraryFunctions";
-const { GET, SET } = "../redisServer.js";
+import { GET, SET } from "../redisServer";
 
 const slides = {
   Art: "fas fa-brush",
@@ -21,6 +21,7 @@ const slides = {
 };
 
 Router.get("/", (req, res) => {
+  console.log("GET", GET, "SET", SET);
   res.render("index", { slides });
 });
 
@@ -33,23 +34,27 @@ Router.get("/subjects/:subject", async (req, res) => {
     .replace(/[_]/g, " ")
     .replace(/^\w/, (c) => c.toUpperCase());
 
-  try {
-    const bookListExtraDetails = await GET(`subjects/${req.params.subject}`);
-    if (reply) {
-      console.log("using cached data");
-      res.render("subject", {
-        title,
-        bookListExtraDetails,
-      });
-    }
+  let bookListExtraDetails = await GET(`subjects/${req.params.subject}`);
+  console.log("bookListExtraDetails exist?", bookListExtraDetails !== null);
+  if (bookListExtraDetails) {
+    console.log("using cached data");
+    bookListExtraDetails = JSON.parse(bookListExtraDetails);
+    res.render("subject", {
+      title,
+      bookListExtraDetails,
+    });
     return;
-  } catch (err) {
-    console.error(err);
   }
 
-  const bookListExtraDetails = await getBySubject(req.params.subject);
+  console.log("do i reach this part????");
+  bookListExtraDetails = await getBySubject(req.params.subject);
 
-  await SET(`subjects/${req.params.subject}`, bookListExtraDetails, 3600);
+  await SET(
+    `subjects/${req.params.subject}`,
+    JSON.stringify(bookListExtraDetails),
+    "EX",
+    3600
+  );
 
   res.render("subject", {
     title,
@@ -58,8 +63,19 @@ Router.get("/subjects/:subject", async (req, res) => {
 });
 
 Router.get("/books/:key", async (req, res) => {
-  // const pageInfo = await getBook(req.params.key);
-  let pageInfo = null;
+  let pageInfo = await GET(`books/${req.params.key}`);
+  if (pageInfo) {
+    console.log("using cached data");
+    pageInfo = JSON.parse(pageInfo);
+    res.render("book", {
+      pageInfo,
+    });
+    return;
+  }
+  pageInfo = await getBook(req.params.key);
+  // let pageInfo = null;
+  await SET(`books/${req.params.key}`, JSON.stringify(pageInfo), "EX", 3600);
+
   res.render("book", { pageInfo });
 });
 

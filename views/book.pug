@@ -4,28 +4,28 @@ block scripts
   link(rel="stylesheet", href="../css/book.css")
 
 block content
-  //- .container
-  //-   .coverSection
-  //-     img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
-  //-   .infoSection
-  //-     h1.txt-lg= pageInfo.workInfo.title
-  //-     if pageInfo.bookInfo.subtitle
-  //-       h2.txt-md#subtitle= pageInfo.bookInfo.subtitle
-  //-     p by #{pageInfo.author_name}
-  //-     .editionLine
-  //-       p.txt-sm The book was published in 
-  //-         span #{pageInfo.bookInfo.publish_date} 
-  //-         | by 
-  //-         a(href="https://openlibrary.org/publishers/" + pageInfo.bookInfo.publishers[0]) #{pageInfo.bookInfo.publishers[0]}
   .container
     .coverSection
-      img(src="http://covers.openlibrary.org/b/id/" + "pageInfo.workInfo.covers[0]" + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+      img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
     .infoSection
-      h1.txt-lg pageInfo.workInfo.title
-      h2.txt-md#subtitle pageInfo.bookInfo.subtitle
-      p by pageInfo.author_name
+      h1.txt-lg= pageInfo.workInfo.title
+      if pageInfo.bookInfo.subtitle
+        h2.txt-md#subtitle= pageInfo.bookInfo.subtitle
+      p by #{pageInfo.author_name}
       .editionLine
         p.txt-sm The book was published in 
-          span pageInfo.bookInfo.publish_date 
+          span #{pageInfo.bookInfo.publish_date} 
           | by 
-          a(href="https://openlibrary.org/publishers/" + "pageInfo.bookInfo.publishers[0]") pageInfo.bookInfo.publishers[0]
+          a(href="https://openlibrary.org/publishers/" + pageInfo.bookInfo.publishers[0]) #{pageInfo.bookInfo.publishers[0]}
+  //- .container
+  //-   .coverSection
+  //-     img(src="http://covers.openlibrary.org/b/id/" + "pageInfo.workInfo.covers[0]" + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+  //-   .infoSection
+  //-     h1.txt-lg pageInfo.workInfo.title
+  //-     h2.txt-md#subtitle pageInfo.bookInfo.subtitle
+  //-     p by pageInfo.author_name
+  //-     .editionLine
+  //-       p.txt-sm The book was published in 
+  //-         span pageInfo.bookInfo.publish_date 
+  //-         | by 
+  //-         a(href="https://openlibrary.org/publishers/" + "pageInfo.bookInfo.publishers[0]") pageInfo.bookInfo.publishers[0]
