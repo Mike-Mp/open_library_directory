@@ -36,14 +36,14 @@ export const getBook = async (key) => {
 
   try {
     authorInfo = await axios.get(
-      `${baseURL}${bookInfo.data.authors[0].key}.json`
+      `${baseURL}${workInfo.data.authors[0].author.key}.json`
     );
   } catch (err) {
     console.error("ERROR AUTHORINFO: ", err);
   }
 
   pageInfo.workInfo = workInfo.data;
-  pageInfo.author_name = authorInfo.data.personal_name;
+  pageInfo.author_name = authorInfo.data.name;
   pageInfo.bookInfo = bookInfo.data;
 
   return pageInfo;

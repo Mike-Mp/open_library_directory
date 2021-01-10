@@ -2,14 +2,14 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: [
-    "./public/css/styles.css",
-    "./public/css/glide.core.min.css",
-    "./public/css/glide.theme.min.css",
-    "./public/css/index.css",
-  ],
+  entry: {
+    styles: "./public/css/styles.css",
+    glideCore: "./public/css/glide.core.min.css",
+    glideTheme: "./public/css/glide.theme.min.css",
+    index: "./public/css/index.css",
+  },
   output: {
-    filename: "styles.js",
+    filename: "[name].css",
     path: path.resolve(__dirname, "public/dist"),
   },
 

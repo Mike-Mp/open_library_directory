@@ -2,9 +2,11 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+  mode: "production",
   entry: {
     slider: "./public/js/slider.js",
     imageSlider: "./public/js/imageSlider.js",
+    subjectCSS: "./public/css/subject.css",
   },
   output: {
     filename: "[name].js",
@@ -45,7 +47,7 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "[name].css",
     }),
   ],
   target: "node",

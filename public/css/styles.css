@@ -2,6 +2,7 @@
 @font-face {
   font-family: "Rotis Semi Serif Std Bold";
   src: url("../webfonts/Rotis-SemiSerif-Std-Bold_38720.ttf");
+  font-display: swap;
 }
 
 :root {
