@@ -11,13 +11,14 @@ block content
       h1= pageInfo.workInfo.title
       if pageInfo.bookInfo.subtitle
         h2.txt-md#subtitle= pageInfo.bookInfo.subtitle
-      p by
+      p by 
         a(href= pageInfo.workInfo.authors[0].author.key)= pageInfo.author_name
       .editionLine
         p.txt-sm The book was published in 
           span #{pageInfo.bookInfo.publish_date} 
           | by 
-          a(href="https://openlibrary.org/publishers/" + pageInfo.bookInfo.publishers[0]) #{pageInfo.bookInfo.publishers[0]}
+          a(href="https://openlibrary.org/publishers/" + pageInfo.bookInfo.publishers[0]) #{pageInfo.bookInfo.publishers[0]} 
+          | - #{pageInfo.bookInfo.number_of_pages} pages
       .bookDescription
         h3.txt-md Description
         p.txt-sm= pageInfo.workInfo.description.value
