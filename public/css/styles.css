@@ -46,6 +46,7 @@ hr {
   background-color: white;
   border: solid 1px gray;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .container h3 {

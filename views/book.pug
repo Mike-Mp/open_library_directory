@@ -8,12 +8,26 @@ block content
     .coverSection
       img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
     .infoSection
-      h1.txt-lg= pageInfo.workInfo.title
+      h1= pageInfo.workInfo.title
       if pageInfo.bookInfo.subtitle
         h2.txt-md#subtitle= pageInfo.bookInfo.subtitle
-      p by #{pageInfo.author_name}
+      p by
+        a(href= pageInfo.workInfo.authors[0].author.key)= pageInfo.author_name
       .editionLine
         p.txt-sm The book was published in 
           span #{pageInfo.bookInfo.publish_date} 
           | by 
           a(href="https://openlibrary.org/publishers/" + pageInfo.bookInfo.publishers[0]) #{pageInfo.bookInfo.publishers[0]}
+      .bookDescription
+        h3.txt-md Description
+        p.txt-sm= pageInfo.workInfo.description.value
+      .subjects
+        h3.txt-md Subjects
+        span.txt-sm 
+          if (pageInfo.workInfo.subjects)
+            each subject, index in pageInfo.workInfo.subjects
+              if index < pageInfo.workInfo.subjects.length
+                a(href="/subjects/" + subject)= subject
+                | , 
+              else
+                a(href="/subjects/" + subject)= subject
