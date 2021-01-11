@@ -37,15 +37,29 @@ block content
         if pageInfo.bookInfo.subtitle
           h3= pageInfo.bookInfo.subtitle
         hr
-        h3 Sentence
+        h3 First sentence
         p "#{pageInfo.bookInfo.first_sentence.value}"
-        h3 The physical object
-        dl
-          dt Format
-          dd= pageInfo.bookInfo.physical_format
-          dt Number of pages
-          dd= pageInfo.bookInfo.number_of_pages
-          dt Dimensions
-          dd= pageInfo.bookInfo.physical_dimensions
-          dt Weight
-          dd= pageInfo.bookInfo.weight
+        .infoBoxSection
+          h3 The physical object
+          dl
+            dt Format
+            dd= pageInfo.bookInfo.physical_format
+            dt Number of pages
+            dd= pageInfo.bookInfo.number_of_pages
+            dt Dimensions
+            dd= pageInfo.bookInfo.physical_dimensions
+            dt Weight
+            dd= pageInfo.bookInfo.weight
+        .infoBoxSection
+          h3 ID Numbers
+          dl
+            dt Open Library
+            dd= pageInfo.bookInfo.key.replace(/[/books]/g, "");
+            dt ISBN10
+            dd= pageInfo.bookInfo.isbn_10
+            dt ISBN13
+            dd= pageInfo.bookInfo.isbn_13
+            dt Library Thing
+            dd= pageInfo.bookInfo.identifiers.librarything
+            dt Goodreads
+            dd= pageInfo.bookInfo.identifiers.goodreads

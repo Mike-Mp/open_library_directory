@@ -59,10 +59,29 @@
   font-size: 1.3rem;
 }
 
-.infoBox dl > * {
+.infoBoxSection h3 {
   float: left;
 }
 
-.infoBox dt {
+.infoBoxSection dl > * {
+  float: left;
+}
+
+.infoBoxSection dt {
+  width: 20%;
+}
+
+.infoboxSection dd {
+  width: 80%;
+}
+
+.infoBoxSection h3,
+dt {
   clear: both;
+  color: rgb(122, 122, 122);
+}
+
+.infoBoxSection dt,
+dl {
+  font-size: 1.3rem;
 }
