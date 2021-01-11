@@ -32,3 +32,20 @@ block content
                 | , 
               else
                 a(href="/subjects/" + subject)= subject
+      .infoBox
+        h2= pageInfo.workInfo.title
+        if pageInfo.bookInfo.subtitle
+          h3= pageInfo.bookInfo.subtitle
+        hr
+        h3 Sentence
+        p "#{pageInfo.bookInfo.first_sentence.value}"
+        h3 The physical object
+        dl
+          dt Format
+          dd= pageInfo.bookInfo.physical_format
+          dt Number of pages
+          dd= pageInfo.bookInfo.number_of_pages
+          dt Dimensions
+          dd= pageInfo.bookInfo.physical_dimensions
+          dt Weight
+          dd= pageInfo.bookInfo.weight

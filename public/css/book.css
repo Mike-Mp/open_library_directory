@@ -39,3 +39,30 @@
 .editionLine p {
   transform: translateY(30%);
 }
+
+.infoBox {
+  margin-top: 10px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.infoBox h2 {
+  font-size: 1.8rem;
+}
+
+.infoBox h3 {
+  font-size: 1.6rem;
+}
+
+.infoBox p {
+  font-size: 1.3rem;
+}
+
+.infoBox dl > * {
+  float: left;
+}
+
+.infoBox dt {
+  clear: both;
+}
