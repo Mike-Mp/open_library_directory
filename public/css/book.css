@@ -45,6 +45,7 @@
   border: 1px solid rgb(212, 212, 212);
   border-radius: 5px;
   padding: 10px;
+  padding-bottom: 50px;
 }
 
 .infoBox h2 {
@@ -61,6 +62,7 @@
 
 .infoBoxSection h3 {
   float: left;
+  color: inherit;
 }
 
 .infoBoxSection dl > * {
@@ -69,6 +71,7 @@
 
 .infoBoxSection dt {
   width: 20%;
+  color: rgb(122, 122, 122);
 }
 
 .infoboxSection dd {
@@ -78,7 +81,6 @@
 .infoBoxSection h3,
 dt {
   clear: both;
-  color: rgb(122, 122, 122);
 }
 
 .infoBoxSection dt,

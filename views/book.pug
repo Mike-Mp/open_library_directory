@@ -37,10 +37,11 @@ block content
         if pageInfo.bookInfo.subtitle
           h3= pageInfo.bookInfo.subtitle
         hr
-        h3 First sentence
-        p "#{pageInfo.bookInfo.first_sentence.value}"
+        div
+          h3 First sentence
+          p "#{pageInfo.bookInfo.first_sentence.value}"
         .infoBoxSection
-          h3 The physical object
+          h3 The Physical Object
           dl
             dt Format
             dd= pageInfo.bookInfo.physical_format
@@ -54,7 +55,7 @@ block content
           h3 ID Numbers
           dl
             dt Open Library
-            dd= pageInfo.bookInfo.key.replace(/[/books]/g, "");
+            dd= pageInfo.bookInfo.key.replace(/[/books]/g, "")
             dt ISBN10
             dd= pageInfo.bookInfo.isbn_10
             dt ISBN13
