@@ -6,7 +6,11 @@ block scripts
 block content
   .container
     .coverSection
-      img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+      a.lightbox(href="#dog")
+        img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+      .lightbox-target#dog
+        img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+        a.lightbox-close(href="#")
       button() In Library
       button#wantRead Want to Read
     .infoSection
