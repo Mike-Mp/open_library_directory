@@ -7,8 +7,8 @@
   top: 90px;
   left: 25%;
   z-index: 8888;
-  transition: background-color 0.5s ease;
-  -moz-transition: background-color 0.5s ease;
+  transition: background-color 1s ease;
+  -moz-transition: background-color 1s ease;
 }
 
 #lightbox-image {

@@ -11,3 +11,9 @@ block content
     .leftSection
 
     .rightSection
+      a(href="#" id="lightbox-target")
+        img(src="http://covers.openlibrary.org/b/id/" + authorInfo.photos[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+      #lightbox.animated
+        img#lightbox-image(src="http://covers.openlibrary.org/b/id/" + authorInfo.photos[0] + "-" + "L" + ".jpg")
+        a(href="#" id="close-lightbox") X
+  script(src="../js/lightbox.js")
