@@ -32,3 +32,9 @@ export const getBook = async (key) => {
 
   return pageInfo;
 };
+
+export const getAuthor = async (authorName) => {
+  const authorInfo = await axios.get(`${baseURL}/authors/${authorName}.json`);
+
+  return authorInfo.data;
+};

@@ -1,5 +1,9 @@
 const Router = require("express").Router();
-import { getBySubject, getBook } from "../controllerUtils/openLibraryFunctions";
+import {
+  getBySubject,
+  getBook,
+  getAuthor,
+} from "../controllerUtils/openLibraryFunctions";
 import { GET, SET } from "../redisServer";
 
 const slides = {
@@ -72,6 +76,24 @@ Router.get("/books/:key", async (req, res) => {
   await SET(`books/${req.params.key}`, JSON.stringify(pageInfo), "EX", 3600);
 
   res.render("book", { pageInfo });
+});
+
+Router.get("/authors/:author", async (req, res) => {
+  let authorInfo = await GET(`authors/${req.params.author}`);
+  if (authorInfo) {
+    authorInfo = JSON.parse(authorInfo);
+    res.render("author", { authorInfo });
+    return;
+  }
+  authorInfo = await getAuthor(req.params.author);
+
+  await SET(
+    `authors/${req.params.author}`,
+    JSON.stringify(authorInfo),
+    "EX",
+    3600
+  );
+  res.render("author", { authorInfo });
 });
 
 module.exports = Router;
