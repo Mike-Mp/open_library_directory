@@ -16,4 +16,9 @@ block content
       #lightbox.animated
         img#lightbox-image(src="http://covers.openlibrary.org/b/id/" + authorInfo.photos[0] + "-" + "L" + ".jpg")
         a(href="#" id="close-lightbox") X
+      .alternativeNames
+        h2.txt-md Alternate names
+        ul  
+          each name in authorInfo.alternate_names
+            li= name
   script(src="../js/lightbox.js")

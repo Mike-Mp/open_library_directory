@@ -15,3 +15,7 @@ h2 {
 .rightSection {
   float: left;
 }
+
+ul {
+  list-style: inside;
+}
