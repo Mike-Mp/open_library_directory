@@ -2,8 +2,12 @@ extends layout.pug
 
 block scripts
   link(rel="stylesheet", href="../css/author.css")
+  link(rel="stylesheet", href="../css/lightbox.css")
 
 block content
   .container
     h1.txt-lg= authorInfo.name
     h2.txt-md #{authorInfo.birth_date} - #{authorInfo.death_date}
+    .leftSection
+
+    .rightSection

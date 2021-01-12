@@ -1,11 +1,17 @@
 h1 {
   color: rgb(107, 107, 107);
   margin-top: 20px;
+  font-weight: bold;
 }
+
 h2 {
   color: gray;
 }
 
-h1 {
-  font-weight: bold;
+.leftSection {
+  float: left;
+}
+
+.rightSection {
+  float: left;
 }

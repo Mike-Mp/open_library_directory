@@ -16,38 +16,6 @@
   margin-bottom: 20px;
 }
 
-#lightbox {
-  visibility: hidden;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 50%;
-  height: 70%;
-  top: 90px;
-  left: 25%;
-  z-index: 8888;
-  transition: background-color 0.5s ease;
-  -moz-transition: background-color 0.5s ease;
-}
-
-#lightbox-image {
-  position: absolute;
-  opacity: 0;
-  top: 10%;
-  left: 35%;
-  z-index: 9999;
-  transition: all 0.5s;
-}
-
-#close-lightbox {
-  position: absolute;
-  top: 5%;
-  left: 90%;
-  z-index: 9999;
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-}
-
 #wantRead {
   background-color: green;
   color: white;
