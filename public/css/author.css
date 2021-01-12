@@ -1,0 +1,11 @@
+h1 {
+  color: rgb(107, 107, 107);
+  margin-top: 20px;
+}
+h2 {
+  color: gray;
+}
+
+h1 {
+  font-weight: bold;
+}
