@@ -6,7 +6,11 @@ block scripts
 block content
   .container
     .coverSection
-      img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+      a(href="#" id="lightbox-target")
+        img(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "M" + ".jpg" loading="lazy" id="bookCover")
+      #lightbox.animated
+        img#lightbox-image(src="http://covers.openlibrary.org/b/id/" + pageInfo.workInfo.covers[0] + "-" + "L" + ".jpg")
+        a(href="#" id="close-lightbox") X
       button() In Library
       button#wantRead Want to Read
     .infoSection
@@ -23,7 +27,10 @@ block content
           | - #{pageInfo.bookInfo.number_of_pages} pages
       .bookDescription
         h3.txt-md Description
-        p.txt-sm= pageInfo.workInfo.description.value
+        if pageInfo.workInfo.description
+          p.txt-sm= pageInfo.workInfo.description.value
+        else
+          p.txt-sm No available description
       .subjects
         h3.txt-md Subjects
         span.txt-sm 
@@ -41,7 +48,10 @@ block content
         hr
         div
           h3 First sentence
-          p "#{pageInfo.bookInfo.first_sentence.value}"
+          if pageInfo.bookInfo.first_sentence
+            p "#{pageInfo.bookInfo.first_sentence.value}"
+          else
+            p First sentence has not been added
         .infoBoxSection
           h3 The Physical Object
           dl
@@ -66,3 +76,4 @@ block content
             dd= pageInfo.bookInfo.identifiers.librarything
             dt Goodreads
             dd= pageInfo.bookInfo.identifiers.goodreads
+  script(src="../js/lightbox.js" defer)
