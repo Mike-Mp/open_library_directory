@@ -62,7 +62,7 @@ Router.get("/books/:key", async (req, res) => {
   let pageInfo = await GET(`books/${req.params.key}`);
   if (pageInfo) {
     pageInfo = JSON.parse(pageInfo);
-    res.render("book", {
+    res.render("book1", {
       pageInfo,
     });
     return;
@@ -71,7 +71,7 @@ Router.get("/books/:key", async (req, res) => {
   // let pageInfo = null;
   await SET(`books/${req.params.key}`, JSON.stringify(pageInfo), "EX", 3600);
 
-  res.render("book", { pageInfo });
+  res.render("book1", { pageInfo });
 });
 
 module.exports = Router;
