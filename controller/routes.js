@@ -64,35 +64,40 @@ Router.get("/subjects/:subject", async (req, res) => {
 
 Router.get("/books/:key", async (req, res) => {
   let pageInfo = await GET(`books/${req.params.key}`);
+  let title = req.params.key;
   if (pageInfo) {
     pageInfo = JSON.parse(pageInfo);
     res.render("book", {
       pageInfo,
+      title,
     });
     return;
   }
   pageInfo = await getBook(req.params.key);
   await SET(`books/${req.params.key}`, JSON.stringify(pageInfo), "EX", 3600);
 
-  res.render("book", { pageInfo });
+  res.render("book", { pageInfo, title });
 });
 
 Router.get("/authors/:author", async (req, res) => {
   let authorInfo = await GET(`authors/${req.params.author}`);
+  let title;
   if (authorInfo) {
     authorInfo = JSON.parse(authorInfo);
-    res.render("author", { authorInfo });
+    title = authorInfo.name;
+    console.log(authorInfo);
+    res.render("author", { authorInfo, title });
     return;
   }
   authorInfo = await getAuthor(req.params.author);
-
+  title = authorInfo.name;
   await SET(
     `authors/${req.params.author}`,
     JSON.stringify(authorInfo),
     "EX",
     3600
   );
-  res.render("author", { authorInfo });
+  res.render("author", { authorInfo, title });
 });
 
 module.exports = Router;
