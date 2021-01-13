@@ -16,6 +16,6 @@ h2 {
   float: left;
 }
 
-ul {
+.alternativeNames ul {
   list-style: inside;
 }
