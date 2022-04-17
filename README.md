@@ -6,8 +6,8 @@ To run, first enable Redis.
 
 On a Linux terminal, type:
 
- sudo systemctl start redis.service
+ `sudo systemctl start redis.service`
 
 Run with
 
-npm run dev
+`npm run dev`
